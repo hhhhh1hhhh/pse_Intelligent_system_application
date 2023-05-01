@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>문제 목록</title>
+    <link href="{{ url_for('static', filename='css/test_list.css') }}" rel="stylesheet">
+  </head>
+  <body>
+    <section class="notice">
+      <div class="page-title">
+        <div class="container">
+          <h3>코딩테스트 문제</h3>
+        </div>
+      </div>
+
+      <!-- board list area -->
+      <div id="board-list">
+        <div class="container">
+          <table class="board-table">
+            <thead>
+              <tr>
+                <th scope="col" class="th-num">번호</th>
+                <th scope="col" class="th-title">제목</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for q in q_list %}
+              <tr>
+                <td>{{ q[0] }}</td>
+                <th>
+                  <a href="{{ url_for('question', q_id=q[0]) }}">{{ q[1] }}</a>
+                  <p>{{ q[2] }}</p>
+                </th>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

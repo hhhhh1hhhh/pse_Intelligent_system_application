@@ -1,7 +1,11 @@
+import os
 import subprocess
 from flask import Flask, render_template, request
-import os
+from sqlalchemy import text
+from database import get_db_connection
 from gpt_api import get_feedback
+from models import QList
+
 
 app = Flask(__name__)
 
@@ -16,10 +20,21 @@ def login():
     return render_template("login.html")
 
 
-# 문제를 선택하는 html 필요
 @app.route("/test")
 def test():
     return render_template("test.html")
+
+
+@app.route("/test_list")
+def test_list():
+    # 데이터베이스 연결
+    conn = get_db_connection()
+
+    # 데이터베이스에서 데이터 가져오기
+    q_list = conn.query(QList.q_id, QList.q_name).all()
+
+    # 가져온 데이터를 html 파일에 전달하기
+    return render_template("test_list.html", q_list=q_list)
 
 
 code = ""

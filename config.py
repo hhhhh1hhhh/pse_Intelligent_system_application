@@ -6,3 +6,7 @@ with open("secrets.json") as f:
 
 class Config(object):
     CHATGPT_KEY = secrets["chatgpt_api_key"]
+    DB_HOST = secrets["db_host"]
+    DB_USER = secrets["db_user"]
+    DB_PW = secrets["db_pw"]
+    DB_PORT = secrets["db_port"]
