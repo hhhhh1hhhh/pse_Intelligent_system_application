@@ -1,13 +1,15 @@
 import os
 import subprocess
 from flask import Flask, render_template, request
-from sqlalchemy import text
-from database import get_db_connection
-from gpt_api import get_feedback
-from models import QList
+from database.database import get_db_connection
+from app.gpt_api import get_feedback
+from database.models import QList
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="app/static")
+app.template_folder = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), "app", "templates"
+)
 
 
 @app.route("/")
@@ -74,7 +76,6 @@ def submit():
 
 @app.route("/answer")
 def answer():
-    # 여기에 정답을 받아와서 answer 변수에 저장하면 됩니다.
     answer = '#include <stdio.h>\n\nint main()\n{\n    printf("Hello, world!\\n");\n\n    return 0;\n}'
     return answer
 
