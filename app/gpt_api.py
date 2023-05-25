@@ -5,8 +5,8 @@ from app.config import Config
 openai.api_key = Config.CHATGPT_KEY
 
 
-def get_feedback(code):
-    prompt = f"Problem: Hello, world! Print out., Please give provide feedback and fixes in Korean on the following code for the following problem:\n\n{code}\n\nFeedback:"
+def get_feedback(problem_description, code):
+    prompt = f"아래 주어진 코드는 C언어로 작성된 코드이며, 사용자로부터 입력을 받아 {problem_description}를 수행하려고 합니다.\n\n{code}\n\n 다음 코드의 오류에 대한 피드백과 수정 제안을 해주세요.\n\n피드백:"
     response = openai.Completion.create(
         engine="text-davinci-002",
         prompt=prompt,

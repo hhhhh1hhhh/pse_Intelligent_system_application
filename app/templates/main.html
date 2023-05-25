@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="uft-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1">
+    <title>Codepse main</title>
+	
+	<!--- cutom css line -->
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+
+
+    <!--- box icons link -->
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <!--- google fonts link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <!--- header section -->
+    <header>
+        <a href="/main" class="logo">CODE PSE</a>
+        <div class="bx bx menu" id="menu-icon"></div>
+
+        <ul class="navlist">
+            <li><a href="/">HOME</a></li>
+            <li><a href="/test_list">CODING TEST</a></li>
+            <li><a href="/typinggame">TYPING GAME</a></li>
+            <li><a href="/draggame">DRAG GAME</a></li>
+            <li><a href="outputgame">OUTPUT GAME</a></li>
+
+        </ul>
+    </header>
+        <!--- hero section -->
+        <section class="home" id="home">
+            <div class="hero-text">
+                <h3>WELCOME TO</h3>
+                <h1>CODE PSE</h1>
+                <h4>Mummy don't know daddy's getting hot<br>
+                    At the body shop, doing something unholy<br>
+                    He lucky, lucky, yeah (ooh)<br>
+                    He lucky, lucky, yeah (ye-yeah)
+              </div>
+
+              <div class="home-img">
+               <!-- <img alt="#" src="pic/pngtree-purple-watercolor-splash-png-image_4249239-removebg-preview (1).png" id="splash">-->
+                <img alt="#" src="{{ url_for('static', filename='images/mainimg.png') }}" id="home-img">
+
+                
+              </div>
+        </section>
+
+    <!--- about section -->
+    <section class="about" id="about">
+        <div class="about-img" id="about">
+           <img alt="#" src="{{ url_for('static', filename='images/our.png') }}">
+
+           
+       </div>
+
+       <div class ="about-text">
+        <h2> About our Website</h2>
+        <h5> Our website is where you can <span>practice coding tests</span></h5>
+        <p>우리 웹사이트에 대한 간단한 소개멘트 입력하기<br>
+        우리 웹사이트 코딩 완전 왕초보를 위한 등용문 같은 느낌임다<br>
+        시중에 파는 코딩 관련 서적은 맨날 기초부터 시작하는, 한권이면 끝내는, 이것만 알아도 당신은 코딩왕 어쩌구 그러지만<br>
+        막상 노베이스면 절대 알아먹을 수 없슴다<br>
+        우리는 ㄹㅇ 기본도 없는 멍충쓰들을 위한 웹사이트 입니다<br>
+        이걸로 일단 코딩 맛보기 해보십쇼</p>
+        
+       </div>
+
+    </section>
+    <!--- services section -->
+    <section class="service" id="service">
+        <div class="text-center">
+            <h2>OUR SERVICES</h2>
+            <h4>Do your best to use it!</h4>
+        </div>
+
+        <div class="service-item">
+            <div class="service-box">
+                <i class='bx bx-code-block'></i>
+                <h3>Coding Test</h3>
+                <p>Tastes like strawberries
+                    On a summer evenin'
+                    And it sounds just like a song
+                    I want more berries
+                    And that summer feelin'
+                    It's so wonderful and warm</p>
+                    <a href="/test_list" class="c-btn">Go Test</a>
+            </div>
+
+            <div class="service-box">
+                <i class='bx bxs-keyboard'></i>
+                <h3>TYPING GAME</h3>
+                <p>I heard you got arrested in the street last night
+                    You called me with a voice I didn't recognize
+                    So you're numbin' the pain, stuck in your ways</p>
+                    <a href="/typinggame" class="c-btn">Go Game</a>
+            </div>
+
+            <div class="service-box">
+                <i class='bx bx-mouse-alt'></i>
+                <h3>DRAG GAME</h3>
+                <p>I loved you dangerously
+                    More than the air that I breathe
+                    Knew we would crash at the speed that we were going
+                    Didn't care if the explosion ruined me</p>
+                    <a href="/draggame" class="c-btn">Go Game</a>
+            </div>
+
+            <div class="service-box">
+                <i class='bx bx-desktop' ></i>
+                <h3>OUTPUT GAME</h3>
+                <p>I loved you dangerously
+                    More than the air that I breathe
+                    Knew we would crash at the speed that we were going
+                    Didn't care if the explosion ruined me</p>
+                    <a href="/outputgame" class="c-btn">Go GAME</a>
+            </div>
+
+        </div>
+
+    </section>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
