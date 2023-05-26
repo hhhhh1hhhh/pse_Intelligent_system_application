@@ -3,9 +3,6 @@ FROM python:3.9-slim-buster
 # 앱을 실행할 작업 디렉토리 설정
 WORKDIR /app
 
-# RUN apt-get update && apt-get install -y locales && localedef -i ko_KR -c -f UTF-8 -A /usr/share/locale/locale.alias ko_KR.UTF-8
-# ENV LANG ko_KR.utf8
-
 # 필요한 패키지 설치
 RUN apt-get update && apt-get install -y \
     gcc \

@@ -386,7 +386,7 @@ function checkAnswer() {
     document.getElementById("result").innerText = "맞았습니다!"; // 모든 답이 정확한 경우, "맞았습니다!"를 출력
     score++;
   } else {
-    document.getElementById("result").innerText = "틀렸습니다. 다시 시도해주세요!"; // 하나라도 틀린 경우, "틀렸습니다. 다시 시도해주세요!"를 출력
+    document.getElementById("result").innerText = "틀렸습니다."; // 하나라도 틀린 경우, "틀렸습니다."를 출력
   }
 
   // 답을 확인한 후에는 더 이상 답을 변경할 수 없도록 함
